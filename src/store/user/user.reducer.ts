@@ -18,7 +18,7 @@ export type UserState = {
   readonly error: Error | null;
 };
 
-const INITIAL_STATE: UserState = {
+export const INITIAL_STATE: UserState = {
   currentUser: null,
   isLoading: false,
   error: null,
