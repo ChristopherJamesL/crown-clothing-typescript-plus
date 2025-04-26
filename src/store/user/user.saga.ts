@@ -35,7 +35,6 @@ export function* getSnapshotFromUserAuth(
       userAuth,
       additionalDetails
     );
-
     if (userSnapshot) {
       yield* put(
         signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
@@ -64,7 +63,7 @@ export function* signInWithEmail({
       email,
       password
     );
-
+    console.log('User Credentials: ', userCredential);
     if (userCredential) {
       const { user } = userCredential;
       yield* call(getSnapshotFromUserAuth, user);
